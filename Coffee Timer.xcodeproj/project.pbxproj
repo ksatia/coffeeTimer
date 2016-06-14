@@ -12,6 +12,9 @@
 		2AFB89E31CE3A9A3000052EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AFB89E11CE3A9A3000052EF /* Main.storyboard */; };
 		2AFB89E51CE3A9A3000052EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AFB89E41CE3A9A3000052EF /* Assets.xcassets */; };
 		2AFB89E81CE3A9A3000052EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AFB89E61CE3A9A3000052EF /* LaunchScreen.storyboard */; };
+		2AFB89F01CE3D726000052EF /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFB89EF1CE3D726000052EF /* TimerModel.swift */; };
+		2AFB89F21CEA5629000052EF /* TimerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFB89F11CEA5629000052EF /* TimerDetailViewController.swift */; };
+		2AFB89F71CEA5B7D000052EF /* TimerEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFB89F61CEA5B7D000052EF /* TimerEditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		2AFB89E41CE3A9A3000052EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2AFB89E71CE3A9A3000052EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2AFB89E91CE3A9A3000052EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2AFB89EF1CE3D726000052EF /* TimerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
+		2AFB89F11CEA5629000052EF /* TimerDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerDetailViewController.swift; sourceTree = "<group>"; };
+		2AFB89F61CEA5B7D000052EF /* TimerEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerEditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +61,40 @@
 			isa = PBXGroup;
 			children = (
 				2AFB89DD1CE3A9A3000052EF /* AppDelegate.swift */,
-				2AFB89DF1CE3A9A3000052EF /* ViewController.swift */,
 				2AFB89E11CE3A9A3000052EF /* Main.storyboard */,
+				2AFB89F31CEA565F000052EF /* View Controllers */,
+				2AFB89F41CEA5667000052EF /* Models */,
 				2AFB89E41CE3A9A3000052EF /* Assets.xcassets */,
+				2AFB89F51CEA5694000052EF /* Supporting Files */,
+			);
+			path = "Coffee Timer";
+			sourceTree = "<group>";
+		};
+		2AFB89F31CEA565F000052EF /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2AFB89F61CEA5B7D000052EF /* TimerEditViewController.swift */,
+				2AFB89DF1CE3A9A3000052EF /* ViewController.swift */,
+				2AFB89F11CEA5629000052EF /* TimerDetailViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		2AFB89F41CEA5667000052EF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2AFB89EF1CE3D726000052EF /* TimerModel.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		2AFB89F51CEA5694000052EF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				2AFB89E61CE3A9A3000052EF /* LaunchScreen.storyboard */,
 				2AFB89E91CE3A9A3000052EF /* Info.plist */,
 			);
-			path = "Coffee Timer";
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +169,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AFB89F01CE3D726000052EF /* TimerModel.swift in Sources */,
+				2AFB89F71CEA5B7D000052EF /* TimerEditViewController.swift in Sources */,
+				2AFB89F21CEA5629000052EF /* TimerDetailViewController.swift in Sources */,
 				2AFB89E01CE3A9A3000052EF /* ViewController.swift in Sources */,
 				2AFB89DE1CE3A9A3000052EF /* AppDelegate.swift in Sources */,
 			);
