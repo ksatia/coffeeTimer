@@ -21,7 +21,7 @@ class TimerEditViewController: UIViewController {
         super.viewDidLoad()
         let numberOfMinutes = Int(timerModel.duration  /  60)
         let numberOfSeconds = timerModel.duration % 60
-        nameField.text = timerModel.coffeeName
+        nameField.text = timerModel.name
         updateLabelsWithMinutes(numberOfMinutes, seconds: numberOfSeconds)
         minutesSlider.value = Float(numberOfMinutes)
         secondsSlider.value = Float(numberOfSeconds)
@@ -29,7 +29,7 @@ class TimerEditViewController: UIViewController {
 
     @IBAction func doneWasPressed(sender: AnyObject) {
         //the text property on a text field is an optional string. If it returns nil, we turn it into a real value. The value that gets inserted is simply a blank string.
-        timerModel.coffeeName = nameField.text ?? ""
+        timerModel.name = nameField.text ?? ""
         timerModel.duration = Int(minutesSlider.value) * 60 + Int(secondsSlider.value)
         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
