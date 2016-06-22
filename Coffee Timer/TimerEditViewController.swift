@@ -23,6 +23,7 @@ class TimerEditViewController: UIViewController {
     @IBOutlet weak var secondsSlider: UISlider!
     var creatingNewTimer = false
     // weak property. The tableVC (which will call the delegate functions) is actually creating the Edit VC, meaning it has a strong reference to it. If the delegate property here is strong, and we say the tableVC is acting as the delegate, then the tableVC has a strong reference to the editVC, and the editVC has a strong reference to the tableVC(the delegate)
+    @IBOutlet weak var timerTypeSegmentedControl: UISegmentedControl!
     
     var delegate: TimerEditViewControllerDelegate?
     
@@ -31,15 +32,27 @@ class TimerEditViewController: UIViewController {
         let numberOfMinutes = Int(timerModel.duration  /  60)
         let numberOfSeconds = timerModel.duration % 60
         nameField.text = timerModel.name
-        updateLabelsWithMinutes(numberOfMinutes, seconds: numberOfSeconds)
+        updateLabelsWithMinutes(minutes: numberOfMinutes, seconds: numberOfSeconds)
         minutesSlider.value = Float(numberOfMinutes)
         secondsSlider.value = Float(numberOfSeconds)
+        switch timerModel.type {
+        case .Coffee:
+            timerTypeSegmentedControl.selectedSegmentIndex = 0
+        case .Tea:
+            timerTypeSegmentedControl.selectedSegmentIndex = 1
+        }
     }
 
     @IBAction func doneWasPressed(sender: AnyObject) {
         //the text property on a text field is an optional string. If it returns nil, we turn it into a real value. The value that gets inserted is simply a blank string.
         timerModel.name = nameField.text ?? ""
         timerModel.duration = Int(minutesSlider.value) * 60 + Int(secondsSlider.value)
+        if timerTypeSegmentedControl.selectedSegmentIndex == 0 {
+            timerModel.type = .Coffee
+        }
+        else {
+            timerModel.type = .Tea
+        }
         self.delegate?.timerEditViewControllerDidSave(self)
         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -49,10 +62,10 @@ class TimerEditViewController: UIViewController {
         let numberOfSeconds = Int(secondsSlider.value)
         minutesLabel.text = "\(numberOfMinutes)"
         secondsLabel.text = "\(numberOfSeconds)"
-        updateLabelsWithMinutes(numberOfMinutes, seconds: numberOfSeconds)
+        updateLabelsWithMinutes(minutes: numberOfMinutes, seconds: numberOfSeconds)
     }
     
-    func updateLabelsWithMinutes(minutes: Int, seconds: Int) {
+    func updateLabelsWithMinutes(minutes minutes: Int, seconds: Int) {
         func pluralize(value: Int, singular: String, plural: String) -> String {
             switch value {
             case 1:
