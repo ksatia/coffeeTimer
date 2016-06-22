@@ -7,6 +7,11 @@
 //
 
 import UIKit
+@objc protocol TimerEditViewControllerDelegate {
+    // our parameter will be the VC that is invoking the functions. We call them from whatever object comforms to the protocol, but the functions are invoked by the TimerEditVC. We're defining the protocol within the same VC that is being passed as the parameter.
+    func timerEditViewControllerDidCancel(viewController: TimerEditViewController)
+    func timerEditViewControllerDidSave(viewController:TimerEditViewController)
+}
 
 class TimerEditViewController: UIViewController {
     
@@ -16,6 +21,10 @@ class TimerEditViewController: UIViewController {
     @IBOutlet weak var minutesSlider: UISlider!
     @IBOutlet weak var secondsLabel: UILabel!
     @IBOutlet weak var secondsSlider: UISlider!
+    var creatingNewTimer = false
+    // weak property. The tableVC (which will call the delegate functions) is actually creating the Edit VC, meaning it has a strong reference to it. If the delegate property here is strong, and we say the tableVC is acting as the delegate, then the tableVC has a strong reference to the editVC, and the editVC has a strong reference to the tableVC(the delegate)
+    
+    var delegate: TimerEditViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +40,7 @@ class TimerEditViewController: UIViewController {
         //the text property on a text field is an optional string. If it returns nil, we turn it into a real value. The value that gets inserted is simply a blank string.
         timerModel.name = nameField.text ?? ""
         timerModel.duration = Int(minutesSlider.value) * 60 + Int(secondsSlider.value)
+        self.delegate?.timerEditViewControllerDidSave(self)
         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -58,6 +68,7 @@ class TimerEditViewController: UIViewController {
     
     
     @IBAction func cancelWasPressed(sender: AnyObject) {
+        delegate?.timerEditViewControllerDidCancel(self)
         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
     

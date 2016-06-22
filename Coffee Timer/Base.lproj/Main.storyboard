@@ -19,7 +19,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VKu-aD-1oI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="303" y="-631"/>
+            <point key="canvasLocation" x="16" y="-554"/>
         </scene>
         <!--Timer Edit View Controller-->
         <scene sceneID="vkp-2s-v1d">
@@ -141,7 +141,13 @@
                             <outlet property="delegate" destination="D6H-Xk-C6N" id="b7C-rO-3iM"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="yJR-GH-7o9"/>
+                    <navigationItem key="navigationItem" id="yJR-GH-7o9">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="biD-YP-EVY">
+                            <connections>
+                                <segue destination="j1f-yj-J70" kind="modal" identifier="newTimer" id="w0n-e8-jod"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="j1f-yj-J70" kind="modal" identifier="editDetail" id="Ozo-gh-4ak"/>
                     </connections>
@@ -178,4 +184,7 @@
             <point key="canvasLocation" x="261" y="124"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="w0n-e8-jod"/>
+    </inferredMetricsTieBreakers>
 </document>

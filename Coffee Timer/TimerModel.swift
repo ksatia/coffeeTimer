@@ -9,12 +9,19 @@
 import Foundation
 
 class TimerModel: NSObject {
+    enum TimerType {
+        case Coffee
+        case Tea
+    }
+    
+    var type: TimerType
     var name = ""
     var duration = 0
     
-    init(name: String, duration: Int) {
+    init(name: String, duration: Int, type: TimerType) {
         self.name = name
         self.duration = duration
+        self.type = type
         super.init()
         
     }

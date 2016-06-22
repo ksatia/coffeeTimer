@@ -13,21 +13,32 @@ class TimerListTableViewController: UITableViewController {
     var coffeeTimers: [TimerModel]!
     var teaTimers: [TimerModel]!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         coffeeTimers = [
-            TimerModel(name: "Colombian", duration: 240), TimerModel(name: "Mexican", duration: 200)
+            TimerModel(name: "Colombian", duration: 240, type: .Coffee), TimerModel(name: "Mexican", duration: 200, type: .Coffee)
         ]
         
         teaTimers = [
-            TimerModel(name: "Green Tea", duration: 400), TimerModel(name: "Oolong", duration: 400), TimerModel(name: "Darjeeling", duration: 240)
+            TimerModel(name: "Green Tea", duration: 400, type: .Tea), TimerModel(name: "Oolong", duration: 400, type: .Tea), TimerModel(name: "Darjeeling", duration: 240, type: .Tea)
         ]
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.leftBarButtonItem = editButtonItem()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+         super.viewWillAppear(animated)
+        
+        // this only works because are editing VC is a modal segue. If it's a push/pop segue, it has been popped from the navigation stack and will actually be nil (no longer in memory). If it's modal, the "VC stays in memory".
+        // Rule of thumb is that if a parent VC -> another VC and both belong to the same NavCtrlr, use a Push segue. 
+        // If the VCs don't belong to the same navigation controller, use a Modal. Original VC (Nav Controller holding the tableview in this case) is responsible for dismissing the modally pushed VC (editVC, in this case). The "done" button belonging to the navCtrl successfully dismisses the presented editVC.
+        
+        guard presentedViewController != nil else {return}
+        tableView.reloadData()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -145,9 +156,18 @@ class TimerListTableViewController: UITableViewController {
             else if segue.identifier == "editDetail" {
                 let navigationController = segue.destinationViewController as! UINavigationController
                 let editViewController = navigationController.topViewController as! TimerEditViewController
-                editViewController.timerModel = timerModel }
-        }
-    }
+                editViewController.timerModel = timerModel
+                editViewController.delegate = self }}}
+            
+            else if let _ = sender as? UIBarButtonItem {
+                if segue.identifier == "newTimer" {
+                    let navigationController = segue.destinationViewController as! UINavigationController
+                    let editViewController = navigationController.topViewController as! TimerEditViewController
+                    editViewController.creatingNewTimer = true
+                    editViewController.timerModel = TimerModel(name: "", duration: 240, type: .Coffee)
+                    editViewController.delegate = self
+                }
+            }
     }
     
     
@@ -162,3 +182,30 @@ class TimerListTableViewController: UITableViewController {
     
 }
 
+extension TimerListTableViewController: TimerEditViewControllerDelegate {
+    func timerEditViewControllerDidCancel(viewController: TimerEditViewController) {
+        
+    }
+    
+    func timerEditViewControllerDidSave(viewController: TimerEditViewController) {
+        let model = viewController.timerModel
+        let type = model.type
+        
+        if type == .Coffee {
+            if !coffeeTimers.contains(model) {
+                coffeeTimers.append(model)
+            }
+            // our editVC can both add new beverages or edit existing ones. If we edit a beverage type from tea to coffee, we need to add it to our coffee array and remove it from the tea array. We filter for our model item and return a boolean - if our bool evaluates to false, it means that it DOES exist in our array, and we "filter" it out. If the boolean evaluates to true, it means that it DOESN'T exist in our array (item != model means none of the array members are equal to our model) and we leave it alone.
+            
+            teaTimers = teaTimers.filter( { (item) -> Bool in
+                return item != model})
+    }
+        else //type is tea
+            if !teaTimers.contains(model) {
+                teaTimers.append(model)
+        }
+        
+        coffeeTimers = coffeeTimers.filter( { (item) -> Bool in
+            return item != model})
+}
+}
