@@ -15,15 +15,14 @@ class TimerModel: NSObject {
     }
     
     var type: TimerType
-    var name = ""
-    var duration = 0
+    dynamic var name = ""
+    dynamic var duration = 0
     
     init(name: String, duration: Int, type: TimerType) {
         self.name = name
         self.duration = duration
         self.type = type
         super.init()
-        
     }
 
     override var description: String {

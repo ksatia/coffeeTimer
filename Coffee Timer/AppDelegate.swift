@@ -17,7 +17,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         print("Application has launched")
+        window?.tintColor = UIColor(red:0.35, green:0.72, blue:0.83, alpha:1.0)
         return true
+    }
+    
+    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+        print ("Application received local")
+        let alertController = UIAlertController(title: notification.alertTitle, message: notification.alertBody, preferredStyle: .Alert)
+        let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alertController.addAction(okAction)
+        
+        window!.rootViewController!.presentViewController(alertController, animated: true, completion: nil)
     }
 
     func applicationWillResignActive(application: UIApplication) {

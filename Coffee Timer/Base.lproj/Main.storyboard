@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Iua-FH-CLL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Iua-FH-CLL">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="gXa-4Y-GSi">
             <objects>
                 <navigationController id="j1f-yj-J70" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3YP-MZ-kLe">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="3YP-MZ-kLe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -20,51 +21,53 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VKu-aD-1oI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="16" y="-554"/>
+            <point key="canvasLocation" x="276" y="-714"/>
         </scene>
         <!--Timer Edit View Controller-->
         <scene sceneID="vkp-2s-v1d">
             <objects>
                 <viewController id="tdM-kt-ou2" customClass="TimerEditViewController" customModule="Coffee_Timer" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Nru-nu-OZK"/>
-                        <viewControllerLayoutGuide type="bottom" id="gxn-eX-tQZ"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="L56-B4-yoL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of Beverage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cFI-I4-X0o">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of Beverage" textAlignment="natural" minimumFontSize="17" id="cFI-I4-X0o">
                                 <rect key="frame" x="16" y="90" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUK-Xa-CAy">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oUK-Xa-CAy">
                                 <rect key="frame" x="16" y="142" width="69" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Seconds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PS0-ED-h1x">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seconds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PS0-ED-h1x">
                                 <rect key="frame" x="16" y="221" width="75" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="o0f-C2-v3Y">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="10" id="o0f-C2-v3Y">
                                 <rect key="frame" x="14" y="171" width="292" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="sliderValueChanged:" destination="tdM-kt-ou2" eventType="valueChanged" id="sg6-uc-U52"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="59" translatesAutoresizingMaskIntoConstraints="NO" id="SIn-0R-pnq">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="59" id="SIn-0R-pnq">
                                 <rect key="frame" x="18" y="269" width="288" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="sliderValueChanged:" destination="tdM-kt-ou2" eventType="valueChanged" id="lRo-6a-HOV"/>
                                 </connections>
                             </slider>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="C37-9B-4u1">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="C37-9B-4u1">
                                 <rect key="frame" x="98" y="396" width="129" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Coffee"/>
                                     <segment title="Tea"/>
@@ -72,25 +75,6 @@
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="o0f-C2-v3Y" firstAttribute="top" secondItem="oUK-Xa-CAy" secondAttribute="bottom" constant="8" id="5hr-WP-IOx"/>
-                            <constraint firstItem="SIn-0R-pnq" firstAttribute="leading" secondItem="L56-B4-yoL" secondAttribute="leadingMargin" id="BaY-AM-rBh"/>
-                            <constraint firstItem="SIn-0R-pnq" firstAttribute="leading" secondItem="L56-B4-yoL" secondAttribute="leadingMargin" id="Hex-CU-K7O"/>
-                            <constraint firstItem="C37-9B-4u1" firstAttribute="leading" secondItem="L56-B4-yoL" secondAttribute="leadingMargin" constant="78" id="Qja-NM-NhL"/>
-                            <constraint firstItem="C37-9B-4u1" firstAttribute="centerX" secondItem="L56-B4-yoL" secondAttribute="centerX" constant="2.5" id="RSK-3A-hEW"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="SIn-0R-pnq" secondAttribute="trailing" constant="-4" id="UE9-71-72m"/>
-                            <constraint firstItem="PS0-ED-h1x" firstAttribute="leading" secondItem="L56-B4-yoL" secondAttribute="leadingMargin" constant="-4" id="YfP-bh-ltm"/>
-                            <constraint firstItem="SIn-0R-pnq" firstAttribute="top" secondItem="PS0-ED-h1x" secondAttribute="bottom" constant="27" id="aDA-wp-8xW"/>
-                            <constraint firstItem="C37-9B-4u1" firstAttribute="top" secondItem="SIn-0R-pnq" secondAttribute="bottom" constant="97" id="cqE-Nr-DMY"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="oUK-Xa-CAy" secondAttribute="trailing" constant="215" id="fZx-dN-2RJ"/>
-                            <constraint firstItem="oUK-Xa-CAy" firstAttribute="leading" secondItem="L56-B4-yoL" secondAttribute="leadingMargin" constant="-4" id="hup-nh-Fbd"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="C37-9B-4u1" secondAttribute="trailing" constant="73" id="k4p-Iw-r0T"/>
-                            <constraint firstItem="o0f-C2-v3Y" firstAttribute="trailing" secondItem="SIn-0R-pnq" secondAttribute="trailing" id="lXL-A0-kvI"/>
-                            <constraint firstItem="o0f-C2-v3Y" firstAttribute="leading" secondItem="L56-B4-yoL" secondAttribute="leadingMargin" constant="-4" id="lpc-gB-khS"/>
-                            <constraint firstItem="oUK-Xa-CAy" firstAttribute="leading" secondItem="L56-B4-yoL" secondAttribute="leadingMargin" constant="-4" id="o2B-Tz-nq3"/>
-                            <constraint firstItem="PS0-ED-h1x" firstAttribute="top" secondItem="o0f-C2-v3Y" secondAttribute="bottom" constant="20" id="pHS-m5-f4K"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="PS0-ED-h1x" secondAttribute="trailing" constant="209" id="wfC-Bt-vv7"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="a0e-I9-uKN">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="1BL-Yx-tlt">
@@ -121,7 +105,9 @@
         <scene sceneID="xkP-d6-Ypu">
             <objects>
                 <navigationController id="Iua-FH-CLL" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="d4D-fs-Nmi">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="d4D-fs-Nmi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -187,58 +173,50 @@
         <scene sceneID="4vF-kC-8kD">
             <objects>
                 <viewController id="9Js-cy-6AR" customClass="TimerDetailViewController" customModule="Coffee_Timer" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ozm-5f-ipH"/>
-                        <viewControllerLayoutGuide type="bottom" id="O8S-pc-dBy"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zYd-Ia-wH8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xj-3g-b34">
-                                <rect key="frame" x="45" y="121" width="229" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0cT-IU-Qdz">
+                                <rect key="frame" x="81" y="100" width="158" height="97"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="50"/>
+                                <color key="textColor" red="0.42656144395859968" green="0.37802670587364445" blue="0.73981914370078738" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XJY-Yj-X7k">
-                                <rect key="frame" x="45" y="275" width="46" height="30"/>
-                                <state key="normal" title="Start"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XJY-Yj-X7k">
+                                <rect key="frame" x="100" y="296" width="120" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="25"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" red="0.3529411764705882" green="0.71764705882352942" blue="0.83137254901960778" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="buttonWasPressed:" destination="9Js-cy-6AR" eventType="touchUpInside" id="2a0-Rb-8gN"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0cT-IU-Qdz">
-                                <rect key="frame" x="45" y="198" width="229" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="1xj-3g-b34" firstAttribute="top" secondItem="Ozm-5f-ipH" secondAttribute="bottom" constant="57" id="9WE-XX-55Z"/>
-                            <constraint firstItem="0cT-IU-Qdz" firstAttribute="leading" secondItem="zYd-Ia-wH8" secondAttribute="leadingMargin" constant="25" id="A4b-Ms-Fbm"/>
-                            <constraint firstItem="XJY-Yj-X7k" firstAttribute="top" secondItem="0cT-IU-Qdz" secondAttribute="bottom" constant="56" id="CG2-Nk-JRw"/>
-                            <constraint firstItem="0cT-IU-Qdz" firstAttribute="top" secondItem="1xj-3g-b34" secondAttribute="bottom" constant="56" id="ITJ-uK-clC"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="0cT-IU-Qdz" secondAttribute="trailing" constant="26" id="KsW-kg-CbF"/>
-                            <constraint firstItem="1xj-3g-b34" firstAttribute="leading" secondItem="zYd-Ia-wH8" secondAttribute="leadingMargin" constant="25" id="S1T-dp-bdQ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="1xj-3g-b34" secondAttribute="trailing" constant="26" id="pJn-Jj-2a8"/>
-                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ETi-1L-UHw"/>
+                    <navigationItem key="navigationItem" id="koW-sI-dFM">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Zdf-Wz-0hz">
+                            <connections>
+                                <segue destination="j1f-yj-J70" kind="modal" identifier="editDetail" id="sIs-X0-3Od"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="countdownLabel" destination="0cT-IU-Qdz" id="Anc-Yl-xNa"/>
-                        <outlet property="durationLabel" destination="1xj-3g-b34" id="aVh-Q4-tqL"/>
                         <outlet property="startStopButton" destination="XJY-Yj-X7k" id="TgA-Pb-L0o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0jP-fX-RYp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="261" y="124"/>
+            <point key="canvasLocation" x="1" y="108"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="w0n-e8-jod"/>
+        <segue reference="sIs-X0-3Od"/>
     </inferredMetricsTieBreakers>
 </document>

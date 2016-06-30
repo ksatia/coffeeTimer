@@ -1,0 +1,24 @@
+
+/* Class = "UILabel"; text = "Time"; ObjectID = "0cT-IU-Qdz"; */
+"0cT-IU-Qdz.text" = "Tiempo";
+
+/* Class = "UISegmentedControl"; C37-9B-4u1.segmentTitles[0] = "Coffee"; ObjectID = "C37-9B-4u1"; */
+"C37-9B-4u1.segmentTitles[0]" = "Café";
+
+/* Class = "UISegmentedControl"; C37-9B-4u1.segmentTitles[1] = "Tea"; ObjectID = "C37-9B-4u1"; */
+"C37-9B-4u1.segmentTitles[1]" = "Té";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "Gvj-5M-LtT"; */
+"Gvj-5M-LtT.text" = "Título";
+
+/* Class = "UILabel"; text = "Seconds"; ObjectID = "PS0-ED-h1x"; */
+"PS0-ED-h1x.text" = "Secondos";
+
+/* Class = "UIButton"; normalTitle = "Start"; ObjectID = "XJY-Yj-X7k"; */
+"XJY-Yj-X7k.normalTitle" = "Comienzo";
+
+/* Class = "UITextField"; placeholder = "Name of Beverage"; ObjectID = "cFI-I4-X0o"; */
+"cFI-I4-X0o.placeholder" = "Nombre de café";
+
+/* Class = "UILabel"; text = "Minutes"; ObjectID = "oUK-Xa-CAy"; */
+"oUK-Xa-CAy.text" = "Minutos";
