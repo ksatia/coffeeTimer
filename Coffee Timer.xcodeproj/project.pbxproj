@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2A1866601D1AFB2D00F8C984 /* TimerListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18665F1D1AFB2D00F8C984 /* TimerListTableViewController.swift */; };
+		2A18666F1D25840A00F8C984 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2AFB89E91CE3A9A3000052EF /* Info.plist */; };
+		2A1866711D2586DF00F8C984 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1866701D2586DF00F8C984 /* CoreDataStack.swift */; };
 		2AFB89DE1CE3A9A3000052EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFB89DD1CE3A9A3000052EF /* AppDelegate.swift */; };
 		2AFB89E31CE3A9A3000052EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AFB89E11CE3A9A3000052EF /* Main.storyboard */; };
 		2AFB89E51CE3A9A3000052EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AFB89E41CE3A9A3000052EF /* Assets.xcassets */; };
@@ -19,6 +21,8 @@
 
 /* Begin PBXFileReference section */
 		2A18665F1D1AFB2D00F8C984 /* TimerListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerListTableViewController.swift; sourceTree = "<group>"; };
+		2A1866621D257E2100F8C984 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		2A1866701D2586DF00F8C984 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		2AFB89DA1CE3A9A3000052EF /* Coffee Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coffee Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AFB89DD1CE3A9A3000052EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AFB89E21CE3A9A3000052EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -84,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				2AFB89EF1CE3D726000052EF /* TimerModel.swift */,
+				2A1866701D2586DF00F8C984 /* CoreDataStack.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -140,6 +145,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 2AFB89D11CE3A9A3000052EF;
 			productRefGroup = 2AFB89DB1CE3A9A3000052EF /* Products */;
@@ -156,6 +162,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A18666F1D25840A00F8C984 /* Info.plist in Resources */,
 				2AFB89E81CE3A9A3000052EF /* LaunchScreen.storyboard in Resources */,
 				2AFB89E51CE3A9A3000052EF /* Assets.xcassets in Resources */,
 				2AFB89E31CE3A9A3000052EF /* Main.storyboard in Resources */,
@@ -172,6 +179,7 @@
 				2AFB89F01CE3D726000052EF /* TimerModel.swift in Sources */,
 				2AFB89F71CEA5B7D000052EF /* TimerEditViewController.swift in Sources */,
 				2AFB89F21CEA5629000052EF /* TimerDetailViewController.swift in Sources */,
+				2A1866711D2586DF00F8C984 /* CoreDataStack.swift in Sources */,
 				2A1866601D1AFB2D00F8C984 /* TimerListTableViewController.swift in Sources */,
 				2AFB89DE1CE3A9A3000052EF /* AppDelegate.swift in Sources */,
 			);
@@ -184,6 +192,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2AFB89E21CE3A9A3000052EF /* Base */,
+				2A1866621D257E2100F8C984 /* es */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
