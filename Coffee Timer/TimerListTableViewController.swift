@@ -167,7 +167,7 @@ class TimerListTableViewController: UITableViewController {
      }
      }
     
-    //data source method that 
+    //data source method that
      override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
         
         userReorderingCells = true
@@ -178,6 +178,14 @@ class TimerListTableViewController: UITableViewController {
         var objectsInSection = sectionInfo?.objects ?? []
         objectsInSection.moveFrom(fromIndexPath.row, toDestination: toIndexPath.row)
         
+        //models are in correct order, now we must update displayOrder to match new ordering
+        for i in 0..<objectsInSection.count {
+            let model = objectsInSection[i] as! TimerModel
+            model.displayOrder = Int32(i)
+        }
+        
+        userReorderingCells = false
+        AppDelegate().coreDataStack.save()
         
 //        if fromIndexPath.section == TableSection.Coffee.rawValue {
 //            coffeeTimers.moveFrom(fromIndexPath.row, toDestination: toIndexPath.row)
