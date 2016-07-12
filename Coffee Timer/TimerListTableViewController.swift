@@ -32,7 +32,7 @@ class TimerListTableViewController: UITableViewController {
             NSSortDescriptor(key: "type", ascending: true),
             NSSortDescriptor(key: "displayOrder", ascending: true)]
         
-        let moc = AppDelegate().coreDataStack.managedObjectContext
+        let moc = appDelegate().coreDataStack.managedObjectContext
         // using type as the section name splits our data into tea and coffee
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: "type", cacheName: nil)
         controller.delegate = self
@@ -185,7 +185,7 @@ class TimerListTableViewController: UITableViewController {
         }
         
         userReorderingCells = false
-        AppDelegate().coreDataStack.save()
+        appDelegate().coreDataStack.save()
         
 //        if fromIndexPath.section == TableSection.Coffee.rawValue {
 //            coffeeTimers.moveFrom(fromIndexPath.row, toDestination: toIndexPath.row)
@@ -247,7 +247,7 @@ class TimerListTableViewController: UITableViewController {
                     let editViewController = navigationController.topViewController as! TimerEditViewController
                     editViewController.creatingNewTimer = true
                     
-                    let moc = AppDelegate().coreDataStack.managedObjectContext
+                    let moc = appDelegate().coreDataStack.managedObjectContext
                     editViewController.timerModel = NSEntityDescription.insertNewObjectForEntityForName("TimerModel", inManagedObjectContext: moc) as! TimerModel
                     editViewController.delegate = self
                 }
@@ -293,12 +293,12 @@ class TimerListTableViewController: UITableViewController {
 extension TimerListTableViewController: TimerEditViewControllerDelegate {
     func timerEditViewControllerDidCancel(viewController: TimerEditViewController) {
         if viewController.creatingNewTimer {
-            AppDelegate().coreDataStack.managedObjectContext.deleteObject(viewController.timerModel)
+            appDelegate().coreDataStack.managedObjectContext.deleteObject(viewController.timerModel)
         }
     }
     
     func timerEditViewControllerDidSave(viewController: TimerEditViewController) {
-        let _ = try? AppDelegate().coreDataStack.managedObjectContext.save()
+        let _ = try? appDelegate().coreDataStack.managedObjectContext.save()
     }
 }
     /*
