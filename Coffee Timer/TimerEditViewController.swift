@@ -30,7 +30,7 @@ class TimerEditViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let numberOfMinutes = Int(timerModel.duration  /  60)
-        let numberOfSeconds = timerModel.duration % 60
+        let numberOfSeconds = Int(timerModel.duration % 60)
         nameField.text = timerModel.name
         updateLabelsWithMinutes(minutes: numberOfMinutes, seconds: numberOfSeconds)
         minutesSlider.value = Float(numberOfMinutes)
@@ -46,7 +46,7 @@ class TimerEditViewController: UIViewController {
     @IBAction func doneWasPressed(sender: AnyObject) {
         //the text property on a text field is an optional string. If it returns nil, we turn it into a real value. The value that gets inserted is simply a blank string.
         timerModel.name = nameField.text ?? ""
-        timerModel.duration = Int(minutesSlider.value) * 60 + Int(secondsSlider.value)
+        timerModel.duration = Int32(minutesSlider.value) * 60 + Int32(secondsSlider.value)
         if timerTypeSegmentedControl.selectedSegmentIndex == 0 {
             timerModel.type = .Coffee
         }
